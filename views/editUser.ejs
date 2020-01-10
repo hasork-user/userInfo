@@ -1,0 +1,38 @@
+<% include ./partials/header %><br>
+<div class="ui four column centered grid">
+	<div class="column">
+		<div class="ui segment">
+			<form class="ui form" method="POST" action="/user/edit/<%= user._id %>?_method=PUT">
+				<h4 class="ui dividing header">User Info</h4>
+				<div class="field">
+					<label>Name</label>
+					<div class="fields">
+						<div class="field">
+							<input type="text" name="user[name]" placeholder="Full Name" required="true" value="<%= user.name %>">
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<label>Mobile Number</label>
+					<div class="fields">
+						<div class="field">
+							<input type="text" name="user[mobile]" placeholder="Mobile Number" required="true" pattern="[0-9]{10}" maxlength="10" value="<%= user.mobile %>">
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<label>Age</label>
+					<div class="fields">
+						<div class="field">
+							<input type="text" name="user[age]" placeholder="Age" required="true" pattern="[0-9]{2}" maxlength="2" value="<%= user.age %>">
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<button class="ui blue button">Edit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<% include ./partials/footer %>
